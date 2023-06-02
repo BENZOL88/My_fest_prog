@@ -14,7 +14,7 @@ def rename(event):
 		new_filename = re.sub(r'.*?@', '', filename)
 		os.rename(os.path.join(directory, filename), os.path.join(directory, new_filename))
 
-
+def My_def():
 root = Tk()
  
 ent = Entry(width=60)
