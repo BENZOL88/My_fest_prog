@@ -16,6 +16,11 @@ def rename(event):
         new_filename = re.sub(r'.*?'+ e, '', filename)
         os.rename(os.path.join(directory, filename), os.path.join(directory, new_filename))
 
+        # Сохранение старого и нового имени в текстовый файл
+        log_file = os.path.join(directory, 'rename_log.txt')
+        with open(log_file, 'a') as f:
+            f.write(f"{new_filename} -> {old_name}\n")
+            
 def count(event):
     s = ent.get()
     folder_path = s
