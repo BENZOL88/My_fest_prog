@@ -13,7 +13,18 @@ def rename(event):
 	for filename in files:
 		new_filename = re.sub(r'.*?@', '', filename)
 		os.rename(os.path.join(directory, filename), os.path.join(directory, new_filename))
+		
+def count(event):
+    s = ent.get()
+    folder_path = s
+    output_file = s+'\\result.txt'
 
+    file_names = os.listdir(folder_path)
+
+    with open(output_file, 'w') as f:
+        for name in file_names:
+            f.write(name + '\n')
+	    
 root = Tk()
 root.title('My prog')
  
